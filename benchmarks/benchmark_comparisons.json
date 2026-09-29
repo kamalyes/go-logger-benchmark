@@ -1,0 +1,50 @@
+[
+  {
+    "scenario": "Disabled",
+    "go_logger_ns": 2.185,
+    "zap_ns": 44.093333333333334,
+    "zerolog_ns": 8.109,
+    "slog_ns": 9.371,
+    "winner": "go-logger"
+  },
+  {
+    "scenario": "KV10",
+    "go_logger_ns": 209.13333333333333,
+    "zap_ns": 702,
+    "zerolog_ns": 303.40000000000003,
+    "slog_ns": 1087.3333333333333,
+    "winner": "go-logger"
+  },
+  {
+    "scenario": "KV10_Caller",
+    "go_logger_ns": 506.7,
+    "zap_ns": 1461,
+    "zerolog_ns": 1394.3333333333333,
+    "slog_ns": 2054,
+    "winner": "go-logger"
+  },
+  {
+    "scenario": "KV10_Parallel",
+    "go_logger_ns": 92.81333333333333,
+    "zap_ns": 347.56666666666666,
+    "zerolog_ns": 136.86666666666667,
+    "slog_ns": 532.6,
+    "winner": "go-logger"
+  },
+  {
+    "scenario": "MsgOnly",
+    "go_logger_ns": 132.4,
+    "zap_ns": 368.8333333333333,
+    "zerolog_ns": 196.63333333333335,
+    "slog_ns": 562.5,
+    "winner": "go-logger"
+  },
+  {
+    "scenario": "MsgOnly_Parallel",
+    "go_logger_ns": 58.06,
+    "zap_ns": 164.03333333333333,
+    "zerolog_ns": 86.44333333333333,
+    "slog_ns": 297.23333333333335,
+    "winner": "go-logger"
+  }
+]

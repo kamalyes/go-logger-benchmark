@@ -1,0 +1,160 @@
+{
+  "go_logger": [
+    {
+      "name": "Disabled",
+      "ns_per_op": 2.185,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "KV10",
+      "ns_per_op": 209.13333333333333,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "KV10_Caller",
+      "ns_per_op": 506.7,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "KV10_Parallel",
+      "ns_per_op": 92.81333333333333,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "MsgOnly",
+      "ns_per_op": 132.4,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "MsgOnly_Parallel",
+      "ns_per_op": 58.06,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    }
+  ],
+  "zap": [
+    {
+      "name": "Disabled",
+      "ns_per_op": 44.093333333333334,
+      "bytes_per_op": 64,
+      "allocs_per_op": 1
+    },
+    {
+      "name": "KV10",
+      "ns_per_op": 702,
+      "bytes_per_op": 320,
+      "allocs_per_op": 1
+    },
+    {
+      "name": "KV10_Caller",
+      "ns_per_op": 1461,
+      "bytes_per_op": 608,
+      "allocs_per_op": 3
+    },
+    {
+      "name": "KV10_Parallel",
+      "ns_per_op": 347.56666666666666,
+      "bytes_per_op": 320,
+      "allocs_per_op": 1
+    },
+    {
+      "name": "KV10_Sugared",
+      "ns_per_op": 1017,
+      "bytes_per_op": 704,
+      "allocs_per_op": 1
+    },
+    {
+      "name": "MsgOnly",
+      "ns_per_op": 368.8333333333333,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "MsgOnly_Parallel",
+      "ns_per_op": 164.03333333333333,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    }
+  ],
+  "zerolog": [
+    {
+      "name": "Disabled",
+      "ns_per_op": 8.109,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "KV10",
+      "ns_per_op": 303.40000000000003,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "KV10_Caller",
+      "ns_per_op": 1394.3333333333333,
+      "bytes_per_op": 336,
+      "allocs_per_op": 4
+    },
+    {
+      "name": "KV10_Parallel",
+      "ns_per_op": 136.86666666666667,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "MsgOnly",
+      "ns_per_op": 196.63333333333335,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "MsgOnly_Parallel",
+      "ns_per_op": 86.44333333333333,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    }
+  ],
+  "slog": [
+    {
+      "name": "Disabled",
+      "ns_per_op": 9.371,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "KV10",
+      "ns_per_op": 1087.3333333333333,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "KV10_Caller",
+      "ns_per_op": 2054,
+      "bytes_per_op": 584,
+      "allocs_per_op": 6
+    },
+    {
+      "name": "KV10_Parallel",
+      "ns_per_op": 532.6,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "MsgOnly",
+      "ns_per_op": 562.5,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "MsgOnly_Parallel",
+      "ns_per_op": 297.23333333333335,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    }
+  ]
+}

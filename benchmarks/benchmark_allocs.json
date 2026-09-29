@@ -1,0 +1,74 @@
+[
+  {
+    "scenario": "Disabled",
+    "go_logger_allocs": 0,
+    "zap_allocs": 1,
+    "zerolog_allocs": 0,
+    "slog_allocs": 0,
+    "go_logger_bytes": 0,
+    "zap_bytes": 64,
+    "zerolog_bytes": 0,
+    "slog_bytes": 0,
+    "winner": "go-logger"
+  },
+  {
+    "scenario": "KV10",
+    "go_logger_allocs": 0,
+    "zap_allocs": 1,
+    "zerolog_allocs": 0,
+    "slog_allocs": 0,
+    "go_logger_bytes": 0,
+    "zap_bytes": 320,
+    "zerolog_bytes": 0,
+    "slog_bytes": 0,
+    "winner": "go-logger"
+  },
+  {
+    "scenario": "KV10_Caller",
+    "go_logger_allocs": 0,
+    "zap_allocs": 3,
+    "zerolog_allocs": 4,
+    "slog_allocs": 6,
+    "go_logger_bytes": 0,
+    "zap_bytes": 608,
+    "zerolog_bytes": 336,
+    "slog_bytes": 584,
+    "winner": "go-logger"
+  },
+  {
+    "scenario": "KV10_Parallel",
+    "go_logger_allocs": 0,
+    "zap_allocs": 1,
+    "zerolog_allocs": 0,
+    "slog_allocs": 0,
+    "go_logger_bytes": 0,
+    "zap_bytes": 320,
+    "zerolog_bytes": 0,
+    "slog_bytes": 0,
+    "winner": "go-logger"
+  },
+  {
+    "scenario": "MsgOnly",
+    "go_logger_allocs": 0,
+    "zap_allocs": 0,
+    "zerolog_allocs": 0,
+    "slog_allocs": 0,
+    "go_logger_bytes": 0,
+    "zap_bytes": 0,
+    "zerolog_bytes": 0,
+    "slog_bytes": 0,
+    "winner": "go-logger"
+  },
+  {
+    "scenario": "MsgOnly_Parallel",
+    "go_logger_allocs": 0,
+    "zap_allocs": 0,
+    "zerolog_allocs": 0,
+    "slog_allocs": 0,
+    "go_logger_bytes": 0,
+    "zap_bytes": 0,
+    "zerolog_bytes": 0,
+    "slog_bytes": 0,
+    "winner": "go-logger"
+  }
+]
