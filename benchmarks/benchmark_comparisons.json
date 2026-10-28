@@ -1,0 +1,202 @@
+[
+  {
+    "scenario": "BigPayload",
+    "go_logger_ns": 23042.666666666668,
+    "zap_ns": 55574.666666666664,
+    "zerolog_ns": 32192.666666666668,
+    "slog_ns": 57729.333333333336,
+    "winner": "go-logger"
+  },
+  {
+    "scenario": "Child",
+    "go_logger_ns": 99.83,
+    "zap_ns": 276.93333333333334,
+    "zerolog_ns": 145,
+    "slog_ns": 460.73333333333335,
+    "winner": "go-logger"
+  },
+  {
+    "scenario": "ChildBuild",
+    "go_logger_ns": 626.7333333333333,
+    "zap_ns": 880.1,
+    "zerolog_ns": 351.5666666666666,
+    "slog_ns": 1379.6666666666667,
+    "winner": "zerolog"
+  },
+  {
+    "scenario": "Child_Parallel",
+    "go_logger_ns": 41.63666666666667,
+    "zap_ns": 123.66666666666667,
+    "zerolog_ns": 64.00666666666666,
+    "slog_ns": 224.83333333333334,
+    "winner": "go-logger"
+  },
+  {
+    "scenario": "Context",
+    "go_logger_ns": 232.13333333333333,
+    "zap_ns": 501.6333333333334,
+    "zerolog_ns": 212.73333333333335,
+    "slog_ns": 847.5666666666666,
+    "winner": "zerolog"
+  },
+  {
+    "scenario": "Context_Parallel",
+    "go_logger_ns": 99.31,
+    "zap_ns": 249,
+    "zerolog_ns": 100.03000000000002,
+    "slog_ns": 388.8666666666666,
+    "winner": "go-logger"
+  },
+  {
+    "scenario": "Disabled",
+    "go_logger_ns": 1.915,
+    "zap_ns": 31.583333333333332,
+    "zerolog_ns": 5.696666666666666,
+    "slog_ns": 7.505333333333334,
+    "winner": "go-logger"
+  },
+  {
+    "scenario": "Disabled_KV10",
+    "go_logger_ns": 3.2803333333333335,
+    "zap_ns": 81.29666666666667,
+    "zerolog_ns": 11.670000000000002,
+    "slog_ns": 8.152333333333333,
+    "winner": "go-logger"
+  },
+  {
+    "scenario": "EscapeHeavy",
+    "go_logger_ns": 347.8333333333333,
+    "zap_ns": 599.1333333333333,
+    "zerolog_ns": 345.09999999999997,
+    "slog_ns": 783.3666666666667,
+    "winner": "zerolog"
+  },
+  {
+    "scenario": "KV10",
+    "go_logger_ns": 202.4,
+    "zap_ns": 534.5666666666667,
+    "zerolog_ns": 217.13333333333335,
+    "slog_ns": 876.7333333333332,
+    "winner": "go-logger"
+  },
+  {
+    "scenario": "KV10_Caller",
+    "go_logger_ns": 406.2333333333333,
+    "zap_ns": 1126.6666666666667,
+    "zerolog_ns": 1049.3333333333333,
+    "slog_ns": 1563.3333333333333,
+    "winner": "go-logger"
+  },
+  {
+    "scenario": "KV10_Parallel",
+    "go_logger_ns": 89.83999999999999,
+    "zap_ns": 260.7,
+    "zerolog_ns": 101.77333333333333,
+    "slog_ns": 381.4666666666667,
+    "winner": "go-logger"
+  },
+  {
+    "scenario": "KV2",
+    "go_logger_ns": 122.5,
+    "zap_ns": 341.7333333333333,
+    "zerolog_ns": 158.93333333333334,
+    "slog_ns": 593.1333333333333,
+    "winner": "go-logger"
+  },
+  {
+    "scenario": "KV20",
+    "go_logger_ns": 304.43333333333334,
+    "zap_ns": 759.9666666666667,
+    "zerolog_ns": 290.93333333333334,
+    "slog_ns": 1297,
+    "winner": "zerolog"
+  },
+  {
+    "scenario": "MsgOnly",
+    "go_logger_ns": 93.31,
+    "zap_ns": 272.6666666666667,
+    "zerolog_ns": 142.1,
+    "slog_ns": 455.06666666666666,
+    "winner": "go-logger"
+  },
+  {
+    "scenario": "MsgOnly_Caller",
+    "go_logger_ns": 295.8666666666667,
+    "zap_ns": 850.2333333333332,
+    "zerolog_ns": 1038,
+    "slog_ns": 1176.6666666666667,
+    "winner": "go-logger"
+  },
+  {
+    "scenario": "MsgOnly_Parallel",
+    "go_logger_ns": 37.660000000000004,
+    "zap_ns": 117.66666666666667,
+    "zerolog_ns": 65.94333333333333,
+    "slog_ns": 212.63333333333333,
+    "winner": "go-logger"
+  },
+  {
+    "scenario": "ObjectField",
+    "go_logger_ns": 472.3666666666666,
+    "zap_ns": 741.6666666666666,
+    "zerolog_ns": 484.3666666666666,
+    "slog_ns": 1009.6666666666666,
+    "winner": "go-logger"
+  },
+  {
+    "scenario": "SinkBuffered",
+    "go_logger_ns": 259.7333333333333,
+    "zap_ns": 597.3666666666667,
+    "zerolog_ns": 262.3,
+    "slog_ns": 952.4,
+    "winner": "go-logger"
+  },
+  {
+    "scenario": "SinkBuffered_Parallel",
+    "go_logger_ns": 214.6,
+    "zap_ns": 543.6666666666666,
+    "zerolog_ns": 285.06666666666666,
+    "slog_ns": 652.3333333333334,
+    "winner": "go-logger"
+  },
+  {
+    "scenario": "SinkRaw",
+    "go_logger_ns": 1520,
+    "zap_ns": 2025.3333333333333,
+    "zerolog_ns": 1535.6666666666667,
+    "slog_ns": 2353,
+    "winner": "go-logger"
+  },
+  {
+    "scenario": "SinkRaw_Parallel",
+    "go_logger_ns": 1908.6666666666667,
+    "zap_ns": 2391,
+    "zerolog_ns": 1866.3333333333333,
+    "slog_ns": 2535,
+    "winner": "zerolog"
+  },
+  {
+    "scenario": "Text",
+    "go_logger_ns": 165.43333333333334,
+    "zap_ns": 598.8000000000001,
+    "zerolog_ns": 4361,
+    "slog_ns": 779.8000000000001,
+    "winner": "go-logger"
+  },
+  {
+    "scenario": "TypedValues",
+    "go_logger_ns": 185.1,
+    "zap_ns": 573.6,
+    "zerolog_ns": 261.1666666666667,
+    "slog_ns": 802.6666666666666,
+    "winner": "go-logger"
+  },
+  {
+    "scenario": "TypedValues_Parallel",
+    "go_logger_ns": 83.36,
+    "zap_ns": 259.56666666666666,
+    "zerolog_ns": 122.7,
+    "slog_ns": 350.5,
+    "winner": "go-logger"
+  }
+]
