@@ -1,0 +1,16 @@
+# Binaries
+*.exe
+*.test
+*.out
+
+# Profiling
+mem.out
+mem*.out
+cpu.out
+
+# Benchmark output (temp files)
+benchmark_output.txt
+benchmark_full.txt
+
+# Local checkout of upstream source (CI workflow)
+_go-logger/

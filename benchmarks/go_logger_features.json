@@ -1,0 +1,92 @@
+[
+  {
+    "scenario": "Failure_Direct",
+    "ns_per_op": 115.33333333333333,
+    "b_per_op": 0,
+    "allocs_op": 0
+  },
+  {
+    "scenario": "Failure_RateLimited",
+    "ns_per_op": 79.64666666666666,
+    "b_per_op": 64,
+    "allocs_op": 1
+  },
+  {
+    "scenario": "Identity_Off",
+    "ns_per_op": 148.79999999999998,
+    "b_per_op": 0,
+    "allocs_op": 0
+  },
+  {
+    "scenario": "Identity_On",
+    "ns_per_op": 145.76666666666665,
+    "b_per_op": 0,
+    "allocs_op": 0
+  },
+  {
+    "scenario": "Limit_BigPayload_Off",
+    "ns_per_op": 51403,
+    "b_per_op": 217167,
+    "allocs_op": 4
+  },
+  {
+    "scenario": "Limit_BigPayload_On",
+    "ns_per_op": 17138.666666666668,
+    "b_per_op": 69700,
+    "allocs_op": 5
+  },
+  {
+    "scenario": "Limit_Off",
+    "ns_per_op": 146.0666666666667,
+    "b_per_op": 0,
+    "allocs_op": 0
+  },
+  {
+    "scenario": "Limit_On",
+    "ns_per_op": 148.9,
+    "b_per_op": 0,
+    "allocs_op": 0
+  },
+  {
+    "scenario": "Sanitize_ChildSteady",
+    "ns_per_op": 81.62666666666667,
+    "b_per_op": 0,
+    "allocs_op": 0
+  },
+  {
+    "scenario": "Sanitize_Hit",
+    "ns_per_op": 262.90000000000003,
+    "b_per_op": 0,
+    "allocs_op": 0
+  },
+  {
+    "scenario": "Sanitize_Keys",
+    "ns_per_op": 193.6,
+    "b_per_op": 0,
+    "allocs_op": 0
+  },
+  {
+    "scenario": "Sanitize_Off",
+    "ns_per_op": 146.63333333333333,
+    "b_per_op": 0,
+    "allocs_op": 0
+  },
+  {
+    "scenario": "Sanitize_OpsKeys_Keys",
+    "ns_per_op": 241.79999999999998,
+    "b_per_op": 0,
+    "allocs_op": 0
+  },
+  {
+    "scenario": "Sanitize_OpsKeys_Off",
+    "ns_per_op": 146.70000000000002,
+    "b_per_op": 0,
+    "allocs_op": 0
+  },
+  {
+    "scenario": "Sanitize_Values",
+    "ns_per_op": 241.36666666666665,
+    "b_per_op": 0,
+    "allocs_op": 0
+  }
+]

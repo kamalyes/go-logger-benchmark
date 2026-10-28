@@ -1,0 +1,9 @@
+[
+  {
+    "scenario": "KV10",
+    "core_ns": 395.06666666666666,
+    "sugared_ns": 595.8666666666667,
+    "ratio": 1.508268646641917,
+    "speedup": "Core faster"
+  }
+]

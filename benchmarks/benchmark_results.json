@@ -1,0 +1,616 @@
+{
+  "go_logger": [
+    {
+      "name": "BigPayload",
+      "ns_per_op": 17604.666666666668,
+      "bytes_per_op": 77878,
+      "allocs_per_op": 4
+    },
+    {
+      "name": "Child",
+      "ns_per_op": 81.46,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "ChildBuild",
+      "ns_per_op": 474.4666666666667,
+      "bytes_per_op": 1281,
+      "allocs_per_op": 10
+    },
+    {
+      "name": "Child_Parallel",
+      "ns_per_op": 33.68666666666667,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "Context",
+      "ns_per_op": 167.2,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "Context_Parallel",
+      "ns_per_op": 69.94666666666667,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "Disabled",
+      "ns_per_op": 1.4606666666666666,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "Disabled_KV10",
+      "ns_per_op": 2.8466666666666662,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "EscapeHeavy",
+      "ns_per_op": 276.3333333333333,
+      "bytes_per_op": 16,
+      "allocs_per_op": 1
+    },
+    {
+      "name": "KV10",
+      "ns_per_op": 145.03333333333333,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "KV10_Caller",
+      "ns_per_op": 282.13333333333327,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "KV10_Parallel",
+      "ns_per_op": 65.67,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "KV2",
+      "ns_per_op": 93.06,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "KV20",
+      "ns_per_op": 214.29999999999998,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "MsgOnly",
+      "ns_per_op": 77.72666666666666,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "MsgOnly_Caller",
+      "ns_per_op": 232.76666666666665,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "MsgOnly_Parallel",
+      "ns_per_op": 31.05,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "ObjectField",
+      "ns_per_op": 363.8333333333333,
+      "bytes_per_op": 112,
+      "allocs_per_op": 2
+    },
+    {
+      "name": "SinkBuffered",
+      "ns_per_op": 184.5,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "SinkBuffered_Parallel",
+      "ns_per_op": 145.16666666666666,
+      "bytes_per_op": 20,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "SinkRaw",
+      "ns_per_op": 1145.6666666666667,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "SinkRaw_Parallel",
+      "ns_per_op": 1344.6666666666667,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "Text",
+      "ns_per_op": 136.3,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "TypedValues",
+      "ns_per_op": 136.0666666666667,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "TypedValues_Parallel",
+      "ns_per_op": 60.07333333333333,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    }
+  ],
+  "zap": [
+    {
+      "name": "BigPayload",
+      "ns_per_op": 36660,
+      "bytes_per_op": 64,
+      "allocs_per_op": 1
+    },
+    {
+      "name": "Child",
+      "ns_per_op": 211.0666666666667,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "ChildBuild",
+      "ns_per_op": 643.3333333333334,
+      "bytes_per_op": 1553,
+      "allocs_per_op": 6
+    },
+    {
+      "name": "Child_Parallel",
+      "ns_per_op": 93.52333333333333,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "Context",
+      "ns_per_op": 363.86666666666673,
+      "bytes_per_op": 256,
+      "allocs_per_op": 1
+    },
+    {
+      "name": "Context_Parallel",
+      "ns_per_op": 187.96666666666667,
+      "bytes_per_op": 256,
+      "allocs_per_op": 1
+    },
+    {
+      "name": "Disabled",
+      "ns_per_op": 23.46666666666667,
+      "bytes_per_op": 64,
+      "allocs_per_op": 1
+    },
+    {
+      "name": "Disabled_KV10",
+      "ns_per_op": 58.92666666666667,
+      "bytes_per_op": 320,
+      "allocs_per_op": 1
+    },
+    {
+      "name": "EscapeHeavy",
+      "ns_per_op": 426.23333333333335,
+      "bytes_per_op": 64,
+      "allocs_per_op": 1
+    },
+    {
+      "name": "KV10",
+      "ns_per_op": 395.06666666666666,
+      "bytes_per_op": 320,
+      "allocs_per_op": 1
+    },
+    {
+      "name": "KV10_Caller",
+      "ns_per_op": 922.1333333333332,
+      "bytes_per_op": 608,
+      "allocs_per_op": 3
+    },
+    {
+      "name": "KV10_Parallel",
+      "ns_per_op": 198.20000000000002,
+      "bytes_per_op": 320,
+      "allocs_per_op": 1
+    },
+    {
+      "name": "KV10_Sugared",
+      "ns_per_op": 595.8666666666667,
+      "bytes_per_op": 704,
+      "allocs_per_op": 1
+    },
+    {
+      "name": "KV2",
+      "ns_per_op": 275.8333333333333,
+      "bytes_per_op": 64,
+      "allocs_per_op": 1
+    },
+    {
+      "name": "KV20",
+      "ns_per_op": 545.4999999999999,
+      "bytes_per_op": 704,
+      "allocs_per_op": 1
+    },
+    {
+      "name": "MsgOnly",
+      "ns_per_op": 206.20000000000002,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "MsgOnly_Caller",
+      "ns_per_op": 699.6333333333333,
+      "bytes_per_op": 288,
+      "allocs_per_op": 2
+    },
+    {
+      "name": "MsgOnly_Parallel",
+      "ns_per_op": 90.03666666666668,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "ObjectField",
+      "ns_per_op": 579.6999999999999,
+      "bytes_per_op": 224,
+      "allocs_per_op": 3
+    },
+    {
+      "name": "SinkBuffered",
+      "ns_per_op": 445.70000000000005,
+      "bytes_per_op": 320,
+      "allocs_per_op": 1
+    },
+    {
+      "name": "SinkBuffered_Parallel",
+      "ns_per_op": 404.36666666666673,
+      "bytes_per_op": 320,
+      "allocs_per_op": 1
+    },
+    {
+      "name": "SinkRaw",
+      "ns_per_op": 1643.3333333333333,
+      "bytes_per_op": 320,
+      "allocs_per_op": 1
+    },
+    {
+      "name": "SinkRaw_Parallel",
+      "ns_per_op": 1864.6666666666667,
+      "bytes_per_op": 320,
+      "allocs_per_op": 1
+    },
+    {
+      "name": "Text",
+      "ns_per_op": 468.1666666666667,
+      "bytes_per_op": 216,
+      "allocs_per_op": 3
+    },
+    {
+      "name": "TypedValues",
+      "ns_per_op": 399.1666666666667,
+      "bytes_per_op": 192,
+      "allocs_per_op": 1
+    },
+    {
+      "name": "TypedValues_Parallel",
+      "ns_per_op": 190.73333333333335,
+      "bytes_per_op": 192,
+      "allocs_per_op": 1
+    }
+  ],
+  "zerolog": [
+    {
+      "name": "BigPayload",
+      "ns_per_op": 23955.666666666668,
+      "bytes_per_op": 74365,
+      "allocs_per_op": 3
+    },
+    {
+      "name": "Child",
+      "ns_per_op": 108.33333333333333,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "ChildBuild",
+      "ns_per_op": 276.8333333333333,
+      "bytes_per_op": 512,
+      "allocs_per_op": 1
+    },
+    {
+      "name": "Child_Parallel",
+      "ns_per_op": 48.47333333333333,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "Context",
+      "ns_per_op": 151.29999999999998,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "Context_Parallel",
+      "ns_per_op": 69.98666666666666,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "Disabled",
+      "ns_per_op": 4.4606666666666674,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "Disabled_KV10",
+      "ns_per_op": 9.858666666666666,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "EscapeHeavy",
+      "ns_per_op": 228.13333333333333,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "KV10",
+      "ns_per_op": 156.16666666666666,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "KV10_Caller",
+      "ns_per_op": 788.1999999999999,
+      "bytes_per_op": 336,
+      "allocs_per_op": 4
+    },
+    {
+      "name": "KV10_Parallel",
+      "ns_per_op": 70.83999999999999,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "KV2",
+      "ns_per_op": 117.33333333333333,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "KV20",
+      "ns_per_op": 213.66666666666666,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "MsgOnly",
+      "ns_per_op": 105.23333333333335,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "MsgOnly_Caller",
+      "ns_per_op": 785.4333333333334,
+      "bytes_per_op": 336,
+      "allocs_per_op": 4
+    },
+    {
+      "name": "MsgOnly_Parallel",
+      "ns_per_op": 45.4,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "ObjectField",
+      "ns_per_op": 377.2666666666667,
+      "bytes_per_op": 208,
+      "allocs_per_op": 3
+    },
+    {
+      "name": "SinkBuffered",
+      "ns_per_op": 186.66666666666666,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "SinkBuffered_Parallel",
+      "ns_per_op": 197.6,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "SinkRaw",
+      "ns_per_op": 1202,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "SinkRaw_Parallel",
+      "ns_per_op": 1396.3333333333333,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "Text",
+      "ns_per_op": 3263,
+      "bytes_per_op": 2001,
+      "allocs_per_op": 61
+    },
+    {
+      "name": "TypedValues",
+      "ns_per_op": 182.96666666666667,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "TypedValues_Parallel",
+      "ns_per_op": 82.49666666666667,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    }
+  ],
+  "slog": [
+    {
+      "name": "BigPayload",
+      "ns_per_op": 41387.666666666664,
+      "bytes_per_op": 74805,
+      "allocs_per_op": 4
+    },
+    {
+      "name": "Child",
+      "ns_per_op": 337,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "ChildBuild",
+      "ns_per_op": 1067.6666666666667,
+      "bytes_per_op": 960,
+      "allocs_per_op": 20
+    },
+    {
+      "name": "Child_Parallel",
+      "ns_per_op": 173.03333333333333,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "Context",
+      "ns_per_op": 615.5,
+      "bytes_per_op": 16,
+      "allocs_per_op": 1
+    },
+    {
+      "name": "Context_Parallel",
+      "ns_per_op": 305.6666666666667,
+      "bytes_per_op": 16,
+      "allocs_per_op": 1
+    },
+    {
+      "name": "Disabled",
+      "ns_per_op": 5.944,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "Disabled_KV10",
+      "ns_per_op": 6.468333333333334,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "EscapeHeavy",
+      "ns_per_op": 553.9,
+      "bytes_per_op": 16,
+      "allocs_per_op": 1
+    },
+    {
+      "name": "KV10",
+      "ns_per_op": 642.0333333333333,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "KV10_Caller",
+      "ns_per_op": 1210.3333333333333,
+      "bytes_per_op": 584,
+      "allocs_per_op": 6
+    },
+    {
+      "name": "KV10_Parallel",
+      "ns_per_op": 326.93333333333334,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "KV2",
+      "ns_per_op": 427.8333333333333,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "KV20",
+      "ns_per_op": 976.5333333333333,
+      "bytes_per_op": 208,
+      "allocs_per_op": 1
+    },
+    {
+      "name": "MsgOnly",
+      "ns_per_op": 333.8,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "MsgOnly_Caller",
+      "ns_per_op": 919.5666666666666,
+      "bytes_per_op": 584,
+      "allocs_per_op": 6
+    },
+    {
+      "name": "MsgOnly_Parallel",
+      "ns_per_op": 152.96666666666667,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "ObjectField",
+      "ns_per_op": 758.9,
+      "bytes_per_op": 208,
+      "allocs_per_op": 3
+    },
+    {
+      "name": "SinkBuffered",
+      "ns_per_op": 645.9,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "SinkBuffered_Parallel",
+      "ns_per_op": 521.3333333333334,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "SinkRaw",
+      "ns_per_op": 1784,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "SinkRaw_Parallel",
+      "ns_per_op": 1751,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "Text",
+      "ns_per_op": 539.9,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "TypedValues",
+      "ns_per_op": 569.1666666666666,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    },
+    {
+      "name": "TypedValues_Parallel",
+      "ns_per_op": 283.76666666666665,
+      "bytes_per_op": 0,
+      "allocs_per_op": 0
+    }
+  ]
+}

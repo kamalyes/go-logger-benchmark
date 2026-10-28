@@ -1,0 +1,96 @@
+name: Benchmark
+
+on:
+  push:
+    branches: [master]
+    paths-ignore:
+      - "benchmarks/**"
+      - "BENCHMARKS.md"
+      - "README.md"
+      - "README_zh.md"
+  workflow_dispatch:
+    inputs:
+      go-logger-ref:
+        description: "go-logger ref (tag/branch/sha)"
+        required: false
+        default: "master"
+  repository_dispatch:
+    types: [go-logger-updated, upstream-updated]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: benchmark
+  cancel-in-progress: true
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout benchmark repo
+        uses: actions/checkout@v4
+
+      - name: Determine go-logger ref
+        id: logger-ref
+        run: |
+          if [ "${{ github.event_name }}" = "repository_dispatch" ]; then
+            MODULE="${{ github.event.client_payload.module }}"
+            VERSION="${{ github.event.client_payload.version }}"
+            REF="${{ github.event.client_payload.ref }}"
+            if [ "$MODULE" = "github.com/kamalyes/go-logger" ] && [ -n "$VERSION" ]; then
+              echo "ref=${VERSION}" >> $GITHUB_OUTPUT
+            elif [ -n "$REF" ]; then
+              REF="${REF#refs/tags/}"
+              REF="${REF#refs/heads/}"
+              echo "ref=${REF:-master}" >> $GITHUB_OUTPUT
+            else
+              echo "ref=master" >> $GITHUB_OUTPUT
+            fi
+          elif [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "ref=${{ inputs.go-logger-ref }}" >> $GITHUB_OUTPUT
+          else
+            echo "ref=master" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Checkout go-logger at ref
+        uses: actions/checkout@v4
+        with:
+          repository: kamalyes/go-logger
+          path: _go-logger
+          ref: ${{ steps.logger-ref.outputs.ref }}
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.25"
+          cache: true
+          cache-dependency-path: go.sum
+
+      - name: Point replace to go-logger source
+        run: |
+          go mod edit -replace github.com/kamalyes/go-logger=./_go-logger
+          go mod tidy
+
+      - name: Run benchmarks
+        run: |
+          go test -run='^$' -bench=. -benchmem -count=3 -timeout=30m ./... | tee benchmark_output.txt
+
+      - name: Parse and generate report
+        run: |
+          go run ./bootstrap/report -parse benchmark_output.txt
+
+      - name: Amend or create single benchmark commit & force push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add benchmarks/ BENCHMARKS.md
+
+          if git log -1 --pretty=%B | grep -q "^benchmark:"; then
+            git commit --amend --no-edit
+          else
+            git commit -m "benchmark: update results"
+          fi
+
+          git push --force
