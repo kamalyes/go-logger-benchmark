@@ -94,14 +94,40 @@ func main() {
 	var allResults []benchResult
 	var env envInfo
 
-	if parseFile != "" {
-		allResults, env = parseBenchmarkFileUnifiedWithEnv(parseFile)
-		if len(allResults) == 0 {
-			fmt.Println("Warning: no benchmark results parsed, using fallback data")
-			allResults = fallbackDataUnified()
-		}
-	} else {
-		allResults = fallbackDataUnified()
+	// 这里刻意没有「解析不到就用内置数据顶上」的回落
+	//
+	// 原先有一个 fallbackDataUnified：解析出 0 条时打一行 Warning 到 stdout，然后用一组硬编码的
+	// 数字继续把报告生成出来，退出码仍然是 0
+	// 于是跑分一失败，发布出去的是一份看着像实测、实际写死的数据 而那组数字只覆盖
+	// 四个场景（现在套件里有二十多个）、也没人维护
+	// 「有时候执行失败，展示的都是很老的性能」就是这么来的 —— 不是旧数据没刷新，
+	// 是失败时被顶上来的那份从来就不是实测
+	//
+	// 基准报告的唯一职责是把实测结果呈现出来 没有实测结果时正确的行为是报错退出、
+	// 让失败可见，而不是编一份出来
+	//
+	// [EN] There is deliberately no "fall back to built-in data when parsing finds nothing"
+	// path here
+	// There used to be fallbackDataUnified: on zero parsed results it printed a warning to stdout and went
+	// on to generate the report from hardcoded numbers, still exiting zero
+	// A failed benchmark run therefore published data that looked measured and was not,
+	// from a table covering four scenarios out of the twenty-odd the suite now has and that
+	// nobody maintained
+	// That is where "sometimes a run fails and it shows ancient numbers" came from: not
+	// stale data, but data that was never measured
+	// A benchmark report exists to present measurements; with no measurements the correct
+	// behaviour is to fail loudly rather than invent them
+	if parseFile == "" {
+		fmt.Fprintln(os.Stderr, "用法: report -parse <benchmark_output.txt> [rootDir]")
+		fmt.Fprintln(os.Stderr, "-parse 是必填的 —— 没有实测输出就没有报告可生成")
+		os.Exit(2)
+	}
+
+	allResults, env = parseBenchmarkFileUnifiedWithEnv(parseFile)
+	if len(allResults) == 0 {
+		fmt.Fprintf(os.Stderr, "从 %s 里一条基准结果都没解析出来 —— 拒绝生成报告\n", parseFile)
+		fmt.Fprintln(os.Stderr, "跑分很可能没跑起来或中途失败，先看那个文件里的内容")
+		os.Exit(1)
 	}
 
 	goLoggerResults, zapResults, zerologResults, slogResults := splitByLibraries(allResults)
@@ -145,27 +171,6 @@ func main() {
 
 	fmt.Printf("Done! Generated %d four-library comparisons, %d alloc rows, %d Zap Core/Sugared comparisons, %d go-logger feature rows\n",
 		len(comparisons), len(allocs), len(sugaredRows), len(featureRows))
-}
-
-func fallbackDataUnified() []benchResult {
-	return []benchResult{
-		{"BenchmarkGoLogger_KV10", 364, 0, 0},
-		{"BenchmarkZap_KV10", 861, 952, 3},
-		{"BenchmarkZerolog_KV10", 312, 320, 2},
-		{"BenchmarkSlog_KV10", 2424, 2160, 26},
-		{"BenchmarkGoLogger_KV10_Caller", 1605, 0, 0},
-		{"BenchmarkZap_KV10_Caller", 1707, 720, 3},
-		{"BenchmarkZerolog_KV10_Caller", 1760, 352, 4},
-		{"BenchmarkSlog_KV10_Caller", 2600, 1600, 30},
-		{"BenchmarkGoLogger_MsgOnly", 185, 0, 0},
-		{"BenchmarkZap_MsgOnly", 205, 96, 2},
-		{"BenchmarkZerolog_MsgOnly", 201, 96, 2},
-		{"BenchmarkSlog_MsgOnly", 1100, 720, 12},
-		{"BenchmarkGoLogger_Disabled", 2, 0, 0},
-		{"BenchmarkZap_Disabled", 5, 0, 0},
-		{"BenchmarkZerolog_Disabled", 2, 0, 0},
-		{"BenchmarkSlog_Disabled", 3, 0, 0},
-	}
 }
 
 func parseBenchmarkFileUnified(filename string) []benchResult {
