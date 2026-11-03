@@ -1,91 +1,91 @@
 [
   {
     "scenario": "Failure_Direct",
-    "ns_per_op": 161.93333333333334,
+    "ns_per_op": 83.09333333333332,
     "b_per_op": 0,
     "allocs_op": 0
   },
   {
     "scenario": "Failure_RateLimited",
-    "ns_per_op": 85.54333333333334,
+    "ns_per_op": 50.25,
     "b_per_op": 64,
     "allocs_op": 1
   },
   {
     "scenario": "Identity_Off",
-    "ns_per_op": 203.16666666666666,
+    "ns_per_op": 117.16666666666667,
     "b_per_op": 0,
     "allocs_op": 0
   },
   {
     "scenario": "Identity_On",
-    "ns_per_op": 203.36666666666665,
+    "ns_per_op": 116.5,
     "b_per_op": 0,
     "allocs_op": 0
   },
   {
     "scenario": "Limit_BigPayload_Off",
-    "ns_per_op": 62505,
-    "b_per_op": 217168,
+    "ns_per_op": 26730.333333333332,
+    "b_per_op": 217225,
     "allocs_op": 4
   },
   {
     "scenario": "Limit_BigPayload_On",
-    "ns_per_op": 20545,
-    "b_per_op": 69701,
+    "ns_per_op": 9189,
+    "b_per_op": 69723,
     "allocs_op": 5
   },
   {
     "scenario": "Limit_Off",
-    "ns_per_op": 201.86666666666667,
+    "ns_per_op": 115.19999999999999,
     "b_per_op": 0,
     "allocs_op": 0
   },
   {
     "scenario": "Limit_On",
-    "ns_per_op": 206.1,
+    "ns_per_op": 120.03333333333335,
     "b_per_op": 0,
     "allocs_op": 0
   },
   {
     "scenario": "Sanitize_ChildSteady",
-    "ns_per_op": 97.64333333333333,
+    "ns_per_op": 58.76666666666667,
     "b_per_op": 0,
     "allocs_op": 0
   },
   {
     "scenario": "Sanitize_Hit",
-    "ns_per_op": 332.6333333333333,
+    "ns_per_op": 203.63333333333333,
     "b_per_op": 0,
     "allocs_op": 0
   },
   {
     "scenario": "Sanitize_Keys",
-    "ns_per_op": 250.5,
+    "ns_per_op": 154.86666666666667,
     "b_per_op": 0,
     "allocs_op": 0
   },
   {
     "scenario": "Sanitize_Off",
-    "ns_per_op": 203.86666666666667,
+    "ns_per_op": 116.73333333333335,
     "b_per_op": 0,
     "allocs_op": 0
   },
   {
     "scenario": "Sanitize_OpsKeys_Keys",
-    "ns_per_op": 298.8333333333333,
+    "ns_per_op": 179.5666666666667,
     "b_per_op": 0,
     "allocs_op": 0
   },
   {
     "scenario": "Sanitize_OpsKeys_Off",
-    "ns_per_op": 215.33333333333334,
+    "ns_per_op": 113.93333333333334,
     "b_per_op": 0,
     "allocs_op": 0
   },
   {
     "scenario": "Sanitize_Values",
-    "ns_per_op": 331.9,
+    "ns_per_op": 211.1,
     "b_per_op": 0,
     "allocs_op": 0
   }
