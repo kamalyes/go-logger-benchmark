@@ -18,7 +18,16 @@ on:
     types: [go-logger-updated, upstream-updated]
 
 permissions:
-  contents: write
+  # 只读：本工作流不再往仓库里提交跑分结果
+  # 留着 write 等于给「哪天又把 git push 加回来」开着门，而上一次正是这样
+  # 把远端历史截断成了一条提交（checkout 默认 fetch-depth: 1，浅克隆里
+  # amend 再 --force，推上去的就是一段只有一条提交的历史）
+  #
+  # [EN] Read-only: this workflow no longer commits results
+  # Leaving write open invites a re-added git push, which is how the remote history was
+  # once truncated to a single commit: checkout defaults to fetch-depth 1, and amending
+  # inside a shallow clone then force pushing publishes that one-commit history
+  contents: read
 
 concurrency:
   group: benchmark
@@ -72,25 +81,23 @@ jobs:
           go mod edit -replace github.com/kamalyes/go-logger=./_go-logger
           go mod tidy
 
-      - name: Run benchmarks
+      - name: 正确性闸门：基准能跑通、生成器能解析
         run: |
-          go test -run='^$' -bench=. -benchmem -count=3 -timeout=30m ./... | tee benchmark_output.txt
-
-      - name: Parse and generate report
-        run: |
-          go run ./bootstrap/report -parse benchmark_output.txt
-
-      - name: Amend or create single benchmark commit & force push
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          git add benchmarks/ BENCHMARKS.md
-
-          if git log -1 --pretty=%B | grep -q "^benchmark:"; then
-            git commit --amend --no-edit
-          else
-            git commit -m "benchmark: update results"
-          fi
-
-          git push --force
+          # 规范跑法与它的参数定义在 Makefile 里，这里只调闸门目标
+          # 不在本步就地写 go test 参数：那等于在工作流里另立一套默认值，
+          # 而「这些数是怎么跑出来的」应该只有一个答案
+          #
+          # 本步不提交任何结果 —— 共享 runner 的数字和上一次不可比，
+          # 提交上去会让 BENCHMARKS.md 长期显示一组互相不可比的值
+          # 报告里的数由固定的物理机跑 make bench 产出、人工提交
+          #
+          # [EN] The canonical invocation and its parameters live in the Makefile; this step
+          # only calls the gate target
+          # Writing go test flags inline here would establish a second set of defaults, and
+          # "how were these numbers produced" should have exactly one answer
+          # This step commits nothing: a shared runner's numbers are not comparable with the
+          # previous ones, and committing them would leave BENCHMARKS.md showing mutually
+          # incomparable values
+          # The numbers in the report come from make bench on one fixed machine, committed
+          # by hand
+          make bench-smoke
